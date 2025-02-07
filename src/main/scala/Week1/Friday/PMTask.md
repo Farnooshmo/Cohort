@@ -1,4 +1,3 @@
-
 Afternoon Task: Functions, methods and for comprehensions
 MVP:
 1. Write a method to calculate the square of an Int. It should have an input parameter, Int
