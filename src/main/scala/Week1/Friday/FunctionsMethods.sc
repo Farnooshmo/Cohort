@@ -40,8 +40,8 @@ def makeATea(sugar:Int, splashesOfMilk: Int):String = {
 makeATea(2,1)
 // valid as well :
 makeATea(sugar = 7, splashesOfMilk = 6)
-// we can name the parameter when cakking the methos.
-//this is hhelpful for  readability whrn the types are the (same)
+// we can name the parameter when calling the methods.
+//this is helpful for  readability when the types are the (same)
 def vat: Double = 1.2
 //def priceIncVat(priceOfItem: Double): Double = {
 //  priceOfItem * vat
@@ -85,7 +85,7 @@ nameLength("tom", "ana")
  * Referential transparency
  */
 //we say something has referential transparency when a function return value is based solely on the inputs.
-//Example: addition(1,2) akways = 3
+//Example: addition(1,2) always = 3
 def addTwoInts(x:Int, y:Int): Int = x + y
 3 + 3
 3+ addTwoInts(1,2)
