@@ -7,5 +7,5 @@ class Book (val title: String, val author: Adult) extends  ReadingFormat  with G
 
 }
 object Book {
-  def apply(title:String, auther:Adult): Book = new Book (title, auther)
+  def apply(title:String, author:Adult): Book = new Book (title, author)
 }
