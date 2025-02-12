@@ -15,6 +15,7 @@ case class Language (language: String, questionNumber: Int, isOOP: Boolean)
 val fourthLanguage = firstLanguage.copy(language = "Ruby")
   val fifthLanguage = secondLanguage.copy(questionNumber = 10)
   val sixthLanguage  = thirdLanguage.copy(isOOP = true)
+  val seventhLanguage  = thirdLanguage.copy(isOOP = true)
   println(fourthLanguage)
   println(fifthLanguage)
   println(sixthLanguage)
@@ -39,4 +40,25 @@ val fourthLanguage = firstLanguage.copy(language = "Ruby")
   println("(fourthLanguage equals sixthLanguage): " + (fourthLanguage.equals(sixthLanguage)))
   println("(fifthLanguage equals sixthLanguage): " + (fifthLanguage.equals(sixthLanguage)))
 
+  //Research
+  //1
+  //.getClass
+  println(firstLanguage.getClass) // prints class Week2.Tuesday.MVP.Extension$Language
+  //.canEqual
+  println(firstLanguage.canEqual(sixthLanguage))// print true because sixthLanguage is an instance of Language
+  //.hashCode
+  println(fourthLanguage.hashCode)//print 1748642984 Return the hash code for the object
+  //.productArity
+  println(fourthLanguage.productArity) // prints 3, it returns the number of parameters. In this case fourthLanguage has 3 parameters
+  //.productElement ❤️
+  println(fourthLanguage.productElement(2))// prints true! Retrieve the value of the nth field of the case class.
+  //.productIterator
+  fourthLanguage.productIterator //? what it does?
+  //.productPrefix
+  println(fourthLanguage.productPrefix) // print Language. Return the name of the case class as a string.
+  //.unapply
+
+//2
+  //Difference between “.equals” and “.==”
+  //I did not find anything related to “.==”, assume it was a typo.but about “==”, You normally use ==, it routes to equals, except that it treats nulls properly. Reference equality (rarely used) is eq.
 }
