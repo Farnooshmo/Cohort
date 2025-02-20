@@ -2,7 +2,7 @@ package Week3.Thursday
 
 import javax.swing.plaf.basic.BasicBorders.RadioButtonBorder
 
-object Enums extends App{
+object Enums extends App {
 
   //finite set s of data.
   //Extends enumeration
@@ -11,22 +11,40 @@ object Enums extends App{
   object Weekday extends Enumeration {
     val Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday = Value
   }
+
   println(Weekday.values)
   println(Weekday.Friday)
 
 
   // below is useful with acronyms
- object  BetterWeekday extends Enumeration{
-   val Monday= Value ("Mon")
-    val Tuesday= Value("Tue")
-    val Wednesday= Value ("Wed")
-    val Thursday= Value("Thurs")
-    val Friday= Value("Fri")
-    val Saturday= Value("Sat")
+  object BetterWeekday extends Enumeration {
+    val Monday = Value("Mon")
+    val Tuesday = Value("Tue")
+    val Wednesday = Value("Wed")
+    val Thursday = Value("Thurs")
+    val Friday = Value("Fri")
+    val Saturday = Value("Sat")
     val Sunday = Value("Sun")
- }
+  }
+
   println(BetterWeekday.values)
   println(BetterWeekday.Sunday)
+  //Pattern matching example
+  def matchWithEnum(weekdays : BetterWeekday.Value) ={
+  weekdays match {
+//    case BetterWeekday.Monday => println(s"Oh , it is ${BetterWeekday.Monday}")
+    case BetterWeekday.Tuesday => println(s"Oh , it is ${BetterWeekday.Tuesday}")
+    case BetterWeekday.Wednesday => println(s"Oh , it is ${BetterWeekday.Wednesday}")
+    case BetterWeekday.Thursday => println(s"Oh , it is ${BetterWeekday.Thursday}")
+    case BetterWeekday.Friday => println(s"Oh , it is ${BetterWeekday.Friday}")
+    case BetterWeekday.Saturday => println(s"Oh , it is ${BetterWeekday.Saturday}")
+    case BetterWeekday.Sunday => println(s"Oh , it is ${BetterWeekday.Sunday}")
+
+  }
+}
+  matchWithEnum(BetterWeekday.Wednesday)
+  //*** We want an exhaustive match - all enums are assigned a match case
+  // We don't see an error message /warning if it is not .( we could miss values): we can not see that monday is commented out
 
 // position
   object  ReorderedWeekday extends Enumeration{
