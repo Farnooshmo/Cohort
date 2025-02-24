@@ -11,6 +11,7 @@ object EitherLogic extends App {
 
   println(letter)
   println(invalidLetter)
+  println(Postcode.postcodeOrError("ccc4"))
 
 
 }

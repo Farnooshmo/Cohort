@@ -49,3 +49,4 @@ trait GenericPostageError {
 
 //5 a case class called `InvalidNameError`
 case class InvalidNameError(message: String) extends GenericPostageError
+case class InvalidPostcodeError (message: String) extends GenericPostageError
