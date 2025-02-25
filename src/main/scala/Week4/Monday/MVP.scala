@@ -82,6 +82,7 @@ object MVP extends App {
 
   //4) Using recursion and given a list with all integers from 1 to 20 inclusive,
 
+  @tailrec
   def isEven(list: List[Int], indexOfNum: Int): Either[String, Boolean] = {
     if (indexOfNum >= list.length - 1 || indexOfNum < 0) {
       Left(s"Index $indexOfNum is not valid for this list ")
@@ -96,4 +97,3 @@ object MVP extends App {
   println(s"\nTest the isEven method with an even integer : " + isEven(List(1,2,3,4,5), 3))
   println(s"\nTest the isEven method with an odd integer: " + isEven(List(1,2,3,4,5), 0))
 }
-
