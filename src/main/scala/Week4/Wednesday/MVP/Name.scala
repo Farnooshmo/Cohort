@@ -81,10 +81,10 @@ object EitherLogic extends App {
   //  println("Left of a letter due to having no space in the postcode: " + letterWithAnInvalidPostcode) //Q13
   //  println("Left of a letter due to having invalid name and postcode: " + letterAllInvalid) //Q13 Name error printed as checks that first, finds it invalid and then leaves the for comp.
   //  println("Right of a valid letter: " + letterAllValid) //Q13
-  def fetchLetter: Future[Letter] = { //2
-    Thread.sleep(1000000) // it takes a lot
+  def fetchLetter: Future[Letter] = Future { //2
+    Thread.sleep(1000000) // it gives error however it shows Future is not completed yet!
     val letter1 = Letter(Name("Simon Singh"), Postcode("AB12 CD3"))
-    Future.successful(letter1)
+    letter1
   }
 
   val eventualLetter: Future[Letter] = fetchLetter //3
