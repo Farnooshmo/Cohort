@@ -82,7 +82,7 @@ object EitherLogic extends App {
   //  println("Left of a letter due to having invalid name and postcode: " + letterAllInvalid) //Q13 Name error printed as checks that first, finds it invalid and then leaves the for comp.
   //  println("Right of a valid letter: " + letterAllValid) //Q13
   def fetchLetter: Future[Letter] = Future { //2
-    Thread.sleep(1000000) // it gives error however it shows Future is not completed yet!
+    Thread.sleep(3000) // Thread.sleep(1000000), gives error however it shows Future is not completed yet!
     val letter1 = Letter(Name("Simon Singh"), Postcode("AB12 CD3"))
     letter1
   }
@@ -100,6 +100,13 @@ object EitherLogic extends App {
     case None => println(s"Future is not completed yet!")
   }
   Await.ready(eventualLetter, 2.seconds)//4
+
+
+  def fetchLetterOrError(name: String, postCode: String):Future [Either [GenericPostageError, Letter]] = Future {
+    Thread.sleep(2)
+    Letter.letterOrError(name, postCode)
+  } //extension 1 /Thread.sleep(2) occur timeout error
+
 
 
   Thread.sleep(3000)
