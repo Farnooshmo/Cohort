@@ -10,5 +10,10 @@ object Revision extends App {
   val int2: Int = 3
 
   print(f"$name2 is ${int2 - int1} years older than $name1")
+
+  //
+  // val new: String = "New is one of the reserved word and can not use as a val/var"
+  //************ if use them inside two backtick, it will be happy. example at line 21!
+  val `new`: String = "Wrap the keywords in backticks to calling a val keyword"
+
 }
-//

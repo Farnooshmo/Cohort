@@ -3,7 +3,7 @@
 
 /**
  * 1. val new: String = "New is one of the reserved word and can not use as a val/var"
- *
+ ************ if use them inside two backtick, it will be happy. example at line 21!
  * 2. To compile code successfully;
  * We should ensure to using the proper syntax.
  * Use val for immutable values and var for mutable values.
@@ -18,3 +18,4 @@
  * return, sealed, super, then, throw, trait, true, try, type, val, var, while, with, yield,
   : = <- => <: >: # @ =>> ?=>
  */
+val `new`: String = "Wrap the keywords in backticks to calling a val keyword"
