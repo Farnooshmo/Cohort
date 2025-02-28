@@ -7,9 +7,8 @@ val numbersTripled: List[Int] = numbers.map { number => number * 3}
 //c
 val removeBlue: Seq[String] = colours.filterNot( colour => colour == "blue")
 //d
-val containOrange: Boolean = colours.exists(
-  colour => colour.contains("orange")
-)
+colours.contains("orange")
+
 //2 if odd -> true
 val mapTrueOrFalseBasedOnBeingOdd: List[Boolean] = numbers.map{ number => number%2 == 1 }
 //3
@@ -23,4 +22,4 @@ val petOfDavid: Map[String, String] = Map(
 //b
 val dogsNames: Map[String, String] = petOfDavid.filter(
  animal => animal._2 == "dog"
-) // It is not a List
+)
