@@ -1,5 +1,7 @@
 package Week4.Revision
 
+import scala.io.StdIn.readLine
+
 object Revision extends App {
   //Week1/Wednesday/ Strings intrpolation and if/else
   //How to calculate the 2 decimal of Pi
@@ -79,11 +81,11 @@ val addOneAtTheEndOfListOfAges = agesOfFamily :+ 1 //List(15, 20, 30, 40, 50, 60
   println(addOneAtTheEndOfListOfAges)
 
 /////!!!!!!
-val y: Seq[Int] = Seq(3,4,5)
+val y: Seq[Int] = Seq(3,4,5) //val y: Seq[Int] = List(3, 4, 5)
   // Append (add to end)
-  val appendY = y:+ 6//  val y: Seq[Int] = List(3, 4, 5)
+  val appendY = y:+ 6//  val prependY: Seq[Int] = List(2, 3, 4, 5, 6)
   // Prepend (add to start)
-  val prependY = 2 +: appendY //  val prependY: Seq[Int] = List(2, 3, 4, 5, 6)
+  val prependY = 2 +: appendY //List(2, 3, 4, 5, 6)
   val multipleInts = Seq(0,1,2) +: y//  val multipleInts: Seq[Any] = List(List(0, 1, 2), 3, 4, 5)
 
   val multipleIntsY = Seq(0,1,2) ++ y//  val multipleIntsY: Seq[Int] = List(0, 1, 2, 3, 4, 5)
@@ -99,5 +101,23 @@ val y: Seq[Int] = Seq(3,4,5)
 
   //
   val groceryList: List[String] = List("milk","egg","shampoo","bread")
-  val third = groceryList.tail.tail.head
+  val third = groceryList.tail.tail.head // it will return shampoo
+
+  //functions:
+  (number: Int) => number +1 // Anonymous function -can not reuse anywhere else
+
+
+  // terminal chat:
+    val whatIsYourName = (name: String) => println(s"Hello $name")
+    whatIsYourName(readLine("What is your name?"))
+    val weather = (weather: String) => println(s"$weather is my favourite!")
+    weather(readLine("What is the weather like today?"))
+//
+  //classic
+// for(numbers <- 1 ≤ to ≤ 10)yield numbers
+  //use operators
+//  for(numbers <- 1 ≤ to ≤ 10)yield numbersnumbers * numbers
+  // use if guards
+//  for(numbers <- 1 ≤ to ≤ 10 if numbers %2 == 0)yield numbers
+
 }
