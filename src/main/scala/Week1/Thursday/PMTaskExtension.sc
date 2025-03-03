@@ -8,11 +8,14 @@ val filterNumberDividedToTree: Seq[Int] = numbers.filterNot(
 val filterNumbersDividedToFour: Seq[Int] = filterNumberDividedToTree.filterNot(
   number => number%4 == 0
 )
-
+//In one line:
+//numbers.filter(n => n%3 != 0).filter(n => n%4 != 0)
 
 //2
 val groceryList: List[String] = List("milk","egg","shampoo","bread")
 // retrieve the 3rd element of a list.
-val removeFirstElement:List[String] = groceryList.tail
-val removeSecondElement:List[String] = removeFirstElement.tail
-val retrieveThirdElement:String = removeSecondElement.head
+//val removeFirstElement:List[String] = groceryList.tail
+//val removeSecondElement:List[String] = removeFirstElement.tail
+//val retrieveThirdElement:String = removeSecondElement.head
+//one line : retrieve the third element :
+val third = groceryList.tail.tail.head

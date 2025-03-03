@@ -35,5 +35,5 @@ if(watermelon <=5 && bag || watermelon <=3 && !bag){
 val watermelonPrice = 1.397
 val totalCost = watermelonPrice * watermelon
 f"$totalCost%.2f"
-//Q it was an int, why it became a string?
+//println(f"The total cost of the watermelons is £${watermelon * 1.397}%2.2f")
 

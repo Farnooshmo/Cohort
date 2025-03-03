@@ -1,35 +1,39 @@
-//1)
-def squareOfInt (num: Int): Int = num * num
-//2
-def evenOrOdd (num: Int): Boolean = num%2 != 0
-//3
-val numberList: List[Int] = List(1,2,4,5,7,8)
-def sumOfOddNumbers (numbers:List[Int]): Int = {
-   val sumOfOdds:List[Int]= for (
-    number <- numbers
-     if evenOrOdd(number)
-   )yield  squareOfInt(number)
-  sumOfOdds.sum
-}
-sumOfOddNumbers(numberList)
+//1.	Write a method to calculate the square of an Int. It should have an input parameter, Int and return type, Int.
+def newSquared (number: Int): Int = number * number
+newSquared(3) //calling to check it works
 
-//4
-val score : List[Int]= List(45, 89, 60)
-def averageScore(scores: List[Int]): Double = {
-  val averageS = scores.sum.toDouble / scores.length
-  BigDecimal(averageS).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
-}
-averageScore(score)
+//2.	Write a method to check if a number is odd. It should have an input parameter, Int and return type, Boolean.
+def isOdd(number: Int): Boolean  = number % 2 != 0
+isOdd(3) //calling to check it works
 
-def getGrade(average: Double): String = {
-average match{
-  case score if score >= 90 => "A"
-  case score if score >= 80 => "B"
-  case score if score >= 70 => "C"
-  case score if score >= 60 => "D"
-  case _ => "E"
+//3.	Using a for comprehension and your methods from MVP Q1 and Q2, write a method that will filter the odd squared numbers from a List and return the sum of these odd squared numbers. It should have an input parameter, List[Int] and return type, Int.
+val numbers:List[Int] = List(1,2,3,4,5,6,7,8,9,10)
+def sumOfOddNumbers(numbers: List[Int]): Int = {
+  val oddSquares = for {
+    number <- numbers //iterate over the list
+    square = newSquared(number) //calculate square (each value). Need to use = as the newSquared method returns an Int.
+    if isOdd(square) //use an if guard, filter and keep only the odd values of square
+  } yield square //collect all the odd squares
+  oddSquares.sum //sum filtered odd squares by calling your val
 }
+sumOfOddNumbers(numbers)
+
+// 4. Grading system
+
+val studentScore: List[Int] = List(97, 75, 89)
+
+def calculateAverage(scores: List[Int]): Double = {
+  scores.sum / scores.length
 }
 
-getGrade(averageScore(score))
+def determineGrade(average: Double): String = {
+  if (average >= 90) "A"
+  else if (average >=80) "B"
+  else if (average >=70) "C"
+  else if (average >=60) "D"
+  else "E"
+}
 
+def studentFinalGrade(scores:List[Int]): String = determineGrade(calculateAverage(scores))
+
+studentFinalGrade(studentScore)

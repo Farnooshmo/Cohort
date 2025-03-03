@@ -16,3 +16,4 @@ if ( one > two){
 } else {
   s"$no"
 }
+//if (one > two) "yes" else "no"
