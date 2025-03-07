@@ -44,7 +44,9 @@ object Revision extends App {
    * (all letters, $, _)
    */
   //Week1/Thursday/ Collections
-  //!!!!!!
+  //!!!!!
+  //❤️❤️❤️  def itemPriceMap: Map[String,Double] = items.zip(priceOfItems).toMap //create a Map from two lists❤️❤️❤️
+
   //Type of collections which are the most common: Sequences, Lists and Maps
   val dye: Map[Int, String] = Map(
     1 -> "green",
@@ -119,5 +121,9 @@ val y: Seq[Int] = Seq(3,4,5) //val y: Seq[Int] = List(3, 4, 5)
 //  for(numbers <- 1 ≤ to ≤ 10)yield numbersnumbers * numbers
   // use if guards
 //  for(numbers <- 1 ≤ to ≤ 10 if numbers %2 == 0)yield numbers
+
+//round 2 decimal:
+  BigDecimal(1.5678988).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
+
 
 }
