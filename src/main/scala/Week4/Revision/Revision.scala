@@ -125,5 +125,15 @@ val y: Seq[Int] = Seq(3,4,5) //val y: Seq[Int] = List(3, 4, 5)
 //round 2 decimal:
   BigDecimal(1.5678988).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
 
-
+  // ‼ ！‼ case Nil is a case object representing an empty list in the standard List implementation. It is used in pattern matching when working with lists.
+  //example:
+  def d(list: List[Int]): String = list match {
+    case Nil => "the list is empty."
+    case head:: tail => s"The list starts with $head and hase more elements" //breaks it to first element (head) and the remaining elements.
+  }
+  println(d(Nil)) //output: The list is empty.
+  println(d(List(1,2,3))) //output: The list starts with 1 and has more elements.
+  // NIl is equivalent to List( )(an empty list.
+  // it is commonly used in pattern matching.
+  // it helps in recursive operations on lists.
 }
